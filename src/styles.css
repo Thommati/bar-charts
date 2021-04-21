@@ -5,12 +5,14 @@ body {
 
 #chart {
   margin: 3rem auto;
-  padding: .5rem;
+  padding: 1rem;
+  width: 40rem;
   height: 30rem;
-  max-width: 40rem;
   background-color: lightgrey;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+
   border-radius: 4px;
   box-shadow: 2px 5px 1rem 0 darkgrey;
 }
@@ -20,4 +22,9 @@ body {
   border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0 0 7px black;
+  flex-grow: 1;
+}
+
+.title {
+text-align: center;
 }

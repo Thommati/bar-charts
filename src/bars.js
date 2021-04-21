@@ -1,5 +1,5 @@
 const generateBar = function(height, maxHeight, options) {
-  const { colWidth, colour } = options;
+  const { colour } = options;
   const barHeight = height * 100 / maxHeight;
 
   let bar = $("<div/>", {
@@ -8,7 +8,6 @@ const generateBar = function(height, maxHeight, options) {
   });
 
   bar.css({
-    width: `${colWidth}rem`,
     height: `${barHeight}%`,
     backgroundColor: colour
   });
@@ -28,14 +27,34 @@ const generateBarArray = function (data, options) {
 };
 
 const drawBarChart = function(data, options, element) {
-  const chart = $(element);
+  // TODO: Element needs to be a DOM or JQuery element and not a string.
+  const { width, height, backColour, title } = options;
+  // const chartBox = $("<div/>", {
+  //   html: "",
+  //   class: "bar"
+  // });
+  // const titleBlock = $("<h3/>", {
+  //   html: title,
+  //   class: "title"
+  // });
+
+  const chart = element;
+  chart.css({
+    width: `${width}rem`,
+    height: `${height}rem`,
+    backgroundColor: backColour
+  });
+
   const barArray = generateBarArray(data, options);
   chart.append(barArray);
 };
 
 const testOptions = {
-  colWidth: 2,
-  colour: 'green'
+  width: 65,
+  height: 50,
+  colour: 'green',
+  backColour: 'aliceblue',
+  title: 'Test Title'
 };
 
-drawBarChart([1, 2, 3, 9, 5], testOptions, '#chart');
+drawBarChart([1, 2, 3, 9, 5, 17, 2, 5, 5, 8], testOptions, $('#chart'));
