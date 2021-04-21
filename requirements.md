@@ -2,7 +2,7 @@
 
 ## FUNCTIONAL REQUIREMENTS
 
-You should have a simple API to draw a bar chart. The function should be used by your HTML page torender the chart into your demo page.  The signature of the function should be as follows:
+You should have a simple API to draw a bar chart. The function should be used by your HTML page to render the chart into your demo page.  The signature of the function should be as follows:
 
 **drawBarChart(data, options, element);**
 

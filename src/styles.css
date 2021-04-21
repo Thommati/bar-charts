@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#chart {
+  margin: 3rem auto;
+  padding: .5rem;
+  height: 30rem;
+  max-width: 40rem;
+  background-color: lightgrey;
+  display: flex;
+  align-items: flex-end;
+  border-radius: 4px;
+  box-shadow: 2px 5px 1rem 0 darkgrey;
+}
+
+.bar {
+  margin: 0 3px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 0 7px black;
+}
