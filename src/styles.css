@@ -3,28 +3,40 @@ body {
   padding: 0;
 }
 
-#chart {
-  margin: 3rem auto;
-  padding: 1rem;
-  width: 40rem;
-  height: 30rem;
+.chartBox {
+  margin: 2rem auto;
   background-color: lightgrey;
+  box-shadow: 2px 5px 1rem 0 darkgrey;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.chart {
+  margin: 0 auto;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
-  border-radius: 4px;
-  box-shadow: 2px 5px 1rem 0 darkgrey;
+  box-sizing: border-box;
 }
 
 .bar {
-  margin: 0 3px;
+  margin: 0 .2rem;
   border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0 0 7px black;
   flex-grow: 1;
+  width: 40rem;
+  height: 30rem;
 }
 
 .title {
-text-align: center;
+  text-align: center;
+  padding: 0;
+  margin: .5rem 0 1.5rem 0;
+  font-size: 1.8rem;
+}
+
+/* Simulating extra styling by user for positioning chart on the page*/
+#chart-display {
+  width: 60rem;
 }
