@@ -1,16 +1,24 @@
 const generateBar = function(height, maxHeight, options) {
-  const { colour, spacing } = options;
+  const { colour, spacing, position } = options;
   const barHeight = height * 100 / maxHeight;
+  let verticalPosition = 'bottom';
 
   let bar = $("<div/>", {
-    html: "",
+    html: height,
     class: "bar"
   });
+
+  if (position === 'top') {
+    verticalPosition = 'flex-start';
+  } else if (position === 'center') {
+    verticalPosition = position;
+  }
 
   bar.css({
     height: `${barHeight}%`,
     backgroundColor: colour,
-    margin: `0 ${spacing}rem`
+    margin: `0 ${spacing}rem`,
+    alignItems: verticalPosition
   });
 
   return bar;
@@ -50,6 +58,9 @@ const drawBarChart = function(data, options, element) {
   element.append([titleBlock, chart.append(barArray)]);
 };
 
+
+// TESTING
+
 const testOptions = {
   width: 55,
   height: 35,
@@ -57,6 +68,7 @@ const testOptions = {
   backColour: 'lightgrey',
   title: 'My Bar Chart Test Title',
   spacing: 0.3
+  // position: 'center'
 };
 
 drawBarChart([1, 2, 3, 9, 5, 17, 2, 5, 5, 8], testOptions, $('#chart-display'));
