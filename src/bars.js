@@ -8,6 +8,8 @@ const generateBar = function(height, maxHeight, options) {
     class: "bar"
   });
 
+  bar.attr('data-before', 'Test label');
+
   if (position === 'top') {
     verticalPosition = 'flex-start';
   } else if (position === 'center') {
@@ -72,3 +74,5 @@ const testOptions = {
 };
 
 drawBarChart([1, 2, 3, 9, 5, 17, 2, 5, 5, 8], testOptions, $('#chart-display'));
+
+// TODO: Add option for font size and colour of data values in bars.
